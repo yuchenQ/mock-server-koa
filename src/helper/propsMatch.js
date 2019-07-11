@@ -1,3 +1,5 @@
+import { type } from 'ramda';
+
 const OPTIONAL_MARK = '$';
 
 const propsMatch = (target, input) => {
@@ -11,15 +13,11 @@ const propsMatch = (target, input) => {
     const pureKey = key.replace(OPTIONAL_MARK, '');
     const inputVal = input[pureKey];
 
-    if (Array.isArray(targetVal)) {
-      return !Array.isArray(inputVal);
-    }
-
-    if (typeof targetVal === 'object') {
+    if (type(targetVal) === 'Object') {
       return !propsMatch(targetVal, inputVal);
     }
 
-    return typeof targetVal !== typeof inputVal;
+    return targetVal !== type(inputVal);
   });
 
   return !notMatch;
