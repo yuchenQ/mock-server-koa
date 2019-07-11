@@ -1,7 +1,7 @@
 module.exports = {
   method: 'POST',
   path: '/reset-count',
-  requestProps: {
+  request: {
     body: {
       count$: 'Number',
     },

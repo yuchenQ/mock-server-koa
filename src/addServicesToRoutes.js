@@ -69,7 +69,7 @@ const addServicesToRoutes = router => async (directory) => {
               expectedBody: requestBody,
               receivedBody: ctx.request.body,
             },
-          }[[requestBody, requestQuery]]),
+          }[[!!requestBody, !!requestQuery]]),
         };
 
         return;
