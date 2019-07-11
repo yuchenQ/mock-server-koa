@@ -51,29 +51,27 @@ const addServicesToRoutes = router => async (directory) => {
         (requestBody && !propsMatch(requestBody, ctx.request.body))
         || (requestQuery && !propsMatch(requestQuery, ctx.request.query))
       ) {
-        let errorDescription;
-
-        if (requestBody) {
-          errorDescription = {
-            expectedBody: request.body,
-            receivedBody: ctx.request.body,
-          };
-        }
-
-        if (requestQuery) {
-          errorDescription = {
-            expectedQuery: request.query,
-            receivedQuery: ctx.request.query,
-          };
-        }
-
-        const error = {
+        ctx.status = 500;
+        ctx.body = {
           message: `${actionPath} DOES NOT MATCH`,
-          ...(errorDescription && errorDescription),
+          ...({
+            [[true, true]]: {
+              expectedBody: requestBody,
+              receivedBody: ctx.request.body,
+              expectedQuery: requestQuery,
+              receivedQuery: ctx.request.query,
+            },
+            [[false, true]]: {
+              expectedQuery: requestQuery,
+              receivedQuery: ctx.request.query,
+            },
+            [[true, false]]: {
+              expectedBody: requestBody,
+              receivedBody: ctx.request.body,
+            },
+          }[[requestBody, requestQuery]]),
         };
 
-        ctx.status = 500;
-        ctx.body = error;
         return;
       }
 
