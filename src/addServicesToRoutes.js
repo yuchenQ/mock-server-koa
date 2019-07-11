@@ -73,8 +73,8 @@ const addServicesToRoutes = router => async (directory) => {
           ...errorDescription,
         };
 
-        ctx.status = 500;
         ctx.body = error;
+        ctx.status = 500;
 
         console.error(error);
 
