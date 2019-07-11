@@ -1,8 +1,12 @@
 {
   "name": "mock-server-koa",
   "version": "1.0.0",
-  "description": "a mock server for front-end project based on koa ecosystem",
+  "description": "A mock server for front-end project based on Koa ecosystem",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuchenQ/mock-server-koa"
+  },
   "scripts": {
     "test": "jest",
     "clean": "rm -rf dist",
