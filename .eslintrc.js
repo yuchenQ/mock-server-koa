@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    jest: true,
   },
   extends: [
     'airbnb-base',
@@ -16,5 +17,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "no-console": "off",
   },
 };
