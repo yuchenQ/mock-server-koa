@@ -1,6 +1,6 @@
 export default {
   method: 'POST',
-  path: '/errors',
+  path: '/error',
   request: {
     body: {
       error: {
