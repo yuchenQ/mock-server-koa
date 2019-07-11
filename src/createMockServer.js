@@ -16,7 +16,7 @@ export default async (servicesDir) => {
     .use(bodyParser())
     .use(router.routes())
     .use(router.allowedMethods())
-    .use(ctx => console.error(`The PATH: ${ctx.path} is missing!`));
+    .use(ctx => console.error(`${ctx.path} is missing`));
 
   return koaQs(app, 'extended');
 };

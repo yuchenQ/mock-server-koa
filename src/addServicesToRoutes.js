@@ -68,7 +68,7 @@ const addServicesToRoutes = router => async (directory) => {
         }
 
         const error = {
-          message: `${actionPath} DOES NOT MATCH MOCK SETTING`,
+          message: `${actionPath} DOES NOT MATCH`,
           ...(errorDescription && errorDescription),
         };
 
