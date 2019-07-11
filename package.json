@@ -2,9 +2,12 @@
   "name": "mock-server-koa",
   "version": "1.0.0",
   "description": "a mock server for front-end project based on koa ecosystem",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && babel src --out-dir dist",
+    "pre-publish": "npm run build"
   },
   "keywords": [
     "mock-server",
@@ -35,5 +38,10 @@
     "koa-bodyparser": "^4.2.1",
     "koa-qs": "^2.0.0",
     "ramda": "^0.26.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    }
   }
 }
