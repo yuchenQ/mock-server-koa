@@ -41,8 +41,8 @@ const addServicesToRoutes = router => async (directory) => {
       const { body: requestBody, query: requestQuery } = request;
 
       if (!requestBody && !requestQuery) {
-        ctx.status = status;
         ctx.body = body;
+        ctx.status = status;
 
         return;
       }
