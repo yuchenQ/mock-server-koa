@@ -81,8 +81,8 @@ const addServicesToRoutes = router => async (directory) => {
         return;
       }
 
-      ctx.status = status;
       ctx.body = body;
+      ctx.status = status;
     });
   });
 };
