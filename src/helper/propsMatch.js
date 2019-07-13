@@ -1,4 +1,4 @@
-import { type } from 'ramda';
+import type from './type';
 
 const OPTIONAL_MARK = '$';
 
