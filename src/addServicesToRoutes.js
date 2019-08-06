@@ -14,8 +14,7 @@ const addServicesToRoutes = router => async (directory) => {
       return;
     }
 
-    // eslint-disable-next-line import/no-dynamic-require, global-require
-    let module = require(thisPath);
+    let module = await import(thisPath);
 
     if (module.default) {
       module = module.default;

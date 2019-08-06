@@ -1,3 +1,1 @@
-import createMockServer from './createMockServer';
-
-export default createMockServer;
+export { default } from './createMockServer';
