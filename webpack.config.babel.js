@@ -16,6 +16,10 @@ export default () => {
     output: {
       path: BUILD_DIR,
       filename: 'index.js',
+      library: 'mock-server-koa',
+      libraryTarget: 'umd',
+      libraryExport: 'default',
+      globalObject: 'this',
     },
     target: 'node',
     externals: [nodeExternals()],

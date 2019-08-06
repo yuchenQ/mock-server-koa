@@ -3,13 +3,14 @@
   "version": "1.0.2",
   "description": "A mock server for front-end project based on Koa ecosystem",
   "main": "dist/index.js",
+  "module": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/yuchenQ/mock-server-koa"
   },
   "scripts": {
     "test": "jest",
-    "build": "webpack --config webpack.config.babel.js",
+    "build": "npx webpack --colors --config webpack.config.babel.js",
     "pre-publish": "npm run test && npm run build"
   },
   "keywords": [
