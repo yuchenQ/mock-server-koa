@@ -11,7 +11,7 @@
     "test": "jest",
     "clean": "rm -rf dist",
     "build": "npm run clean && babel src --out-dir dist",
-    "pre-publish": "npm run build"
+    "pre-publish": "npm run test && npm run build"
   },
   "keywords": [
     "mock-server",
@@ -20,20 +20,20 @@
   "author": "Yuchen Qiao",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.4",
-    "@babel/plugin-transform-runtime": "^7.5.0",
-    "@babel/preset-env": "^7.5.4",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "babel-jest": "^24.8.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-config-google": "^0.13.0",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-import": "^2.18.2",
     "jest": "^24.8.0",
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.5.4",
+    "@babel/runtime": "^7.5.5",
     "@koa/cors": "^3.0.0",
     "@koa/router": "^8.0.0",
     "fs-extra": "^8.1.0",
