@@ -1,6 +1,6 @@
 {
   "name": "mock-server-koa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A mock server for front-end project based on Koa ecosystem",
   "main": "dist/index.js",
   "repository": {
